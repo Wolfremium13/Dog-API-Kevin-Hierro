@@ -83,7 +83,7 @@ function setBreedsOptions(dogList, element) {
     result.forEach(breed => {
         if (breed[1].length > 0) {
             breed[1].forEach(subBreed => {
-                element.appendChild(createNode("option", breed[0] + " " + subBreed, [], []));
+                element.appendChild(createNode("option", breed[0] + " " + subBreed, [], [{name:"value",value:"breed[0] + "\/" + subBreed"}]));
             })
         } else {
             element.appendChild(createNode("option", breed[0], [], []));
@@ -93,7 +93,6 @@ function setBreedsOptions(dogList, element) {
 
 function setImgDog(e) {
     let selectValue = e.target.previousSibling.value;
-    selectValue = selectValue.replace(" ","\/"); //Importante para subrazas
     let urlHttp = "https://dog.ceo/api/breed/" + selectValue + "/images/random";
     if (document.getElementById("dogImg") == null) {
         e.target.parentNode.appendChild(createNode("img", "", ["m-2"], [{
