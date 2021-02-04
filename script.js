@@ -86,10 +86,7 @@ function setBreedsOptions(dogList, element) {
                 element.appendChild(createNode("option", breed[0] + " " + subBreed, [], [{name:"value",value:"breed[0] + "/" + subBreed"}]));
             })
         } else {
-            element.appendChild(createNode("option", breed[0], [], [{
-                name: "value",
-                value: breed[0]
-            }]));
+            element.appendChild(createNode("option", breed[0], [], [{name: "value",value: breed[0]}]));
         }
     })
 }
